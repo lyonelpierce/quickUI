@@ -20,11 +20,15 @@ import {
 import Image from "next/image";
 import { ScrollArea } from "./ui/scroll-area";
 
+import chroma from "chroma-js";
+
 const Hero = () => {
   const [file, setFile] = useState<PreviewFile | null>(null);
   const [colors, setColors] = useState<string[]>([]);
   const [primaryColor, setPrimaryColor] = useState<string | null>(null);
   const [secondaryColor, setSecondaryColor] = useState<string | null>(null);
+
+  const shadeLevels = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950];
 
   const handleDrop = async (
     acceptedFiles: File[],
@@ -104,6 +108,92 @@ const Hero = () => {
       console.error(error);
     }
   };
+
+  const getShades = (color: string): Record<number, string> => {
+    const shades = {
+      50: chroma(color).brighten(3).hex(),
+      100: chroma(color).brighten(2.5).hex(),
+      200: chroma(color).brighten(2).hex(),
+      300: chroma(color).brighten(1.5).hex(),
+      400: chroma(color).brighten(1).hex(),
+      500: color, // The base color itself
+      600: chroma(color).darken(0.5).hex(),
+      700: chroma(color).darken(1).hex(),
+      800: chroma(color).darken(1.5).hex(),
+      900: chroma(color).darken(2).hex(),
+      950: chroma(color).darken(3).hex(),
+    };
+
+    return shades;
+  };
+
+  function hexToRgb(hex: string) {
+    // Remove the leading '#' if present
+    hex = hex.replace("#", "");
+
+    // Parse the hex color into its RGB components
+    const bigint = parseInt(hex, 16);
+    const r = (bigint >> 16) & 255;
+    const g = (bigint >> 8) & 255;
+    const b = bigint & 255;
+
+    return `(${r}, ${g}, ${b})`;
+  }
+
+  function hexToHsl(hex: string): string {
+    // Remove the leading '#' if present
+    hex = hex.replace("#", "");
+
+    // Parse the hex color into its RGB components
+    const bigint = parseInt(hex, 16);
+    const r = (bigint >> 16) & 255;
+    const g = (bigint >> 8) & 255;
+    const b = bigint & 255;
+
+    // Convert RGB values to the range of 0-1
+    const rNormalized = r / 255;
+    const gNormalized = g / 255;
+    const bNormalized = b / 255;
+
+    // Find the maximum and minimum values of R, G, and B.
+    const max = Math.max(rNormalized, gNormalized, bNormalized);
+    const min = Math.min(rNormalized, gNormalized, bNormalized);
+
+    // Initialize h, s, l
+    let h = 0;
+    let s = 0;
+    const l = (max + min) / 2;
+
+    // Calculate saturation and hue
+    if (max !== min) {
+      const delta = max - min;
+      s = l > 0.5 ? delta / (2 - max - min) : delta / (max + min);
+
+      switch (max) {
+        case rNormalized:
+          h =
+            (gNormalized - bNormalized) / delta +
+            (gNormalized < bNormalized ? 6 : 0);
+          break;
+        case gNormalized:
+          h = (bNormalized - rNormalized) / delta + 2;
+          break;
+        case bNormalized:
+          h = (rNormalized - gNormalized) / delta + 4;
+          break;
+      }
+
+      h /= 6;
+    }
+
+    // Convert h, s, l to percentage values
+    h = Math.round(h * 360);
+    s = Math.round(s * 100);
+
+    const lPercentage = Math.round(l * 100);
+
+    return `(${h}, ${s}%, ${lPercentage}%)`;
+  }
 
   return (
     <ResizablePanelGroup direction="horizontal">
@@ -236,17 +326,20 @@ const Hero = () => {
         </div>
       </ResizablePanel>
       <ResizableHandle withHandle />
-      <ResizablePanel minSize={50} className="bg-[#f7f6f5] dark:bg-[#141414]">
+      <ResizablePanel minSize={50}>
         {file &&
           colors &&
           colors.length > 0 &&
           primaryColor &&
           secondaryColor && (
             <div className="flex justify-center">
-              <ScrollArea className="h-[100vh] py-16 flex">
-                <div className="flex flex-col gap-8 w-full pt-8">
+              <ScrollArea className="h-[100vh] py-20 flex justify-center bg-[#f7f6f5] dark:bg-[#141414] w-full">
+                <div className="flex flex-col items-center gap-8 w-full pt-8">
                   {/* PAGE 1 */}
-                  <div className="flex w-[66rem] h-[51rem] bg-white" id="page1">
+                  <div
+                    className="flex w-[66rem] h-[51rem] bg-white shadow-lg"
+                    id="page1"
+                  >
                     <div
                       className="flex w-2/6 justify-center items-center"
                       style={{ backgroundColor: primaryColor }}
@@ -267,7 +360,7 @@ const Hero = () => {
                   </div>
                   {/* PAGE 2 */}
                   <div
-                    className="flex gap-8 bg-white w-[66rem] h-[51rem] p-8"
+                    className="flex gap-8 bg-white w-[66rem] h-[51rem] p-8 shadow-lg"
                     id="page2"
                   >
                     <div
@@ -308,26 +401,101 @@ const Hero = () => {
                   </div>
                   {/* PAGE 3 */}
                   <div
-                    className="flex bg-white w-[66rem] h-[51rem] p-8 py-20"
+                    className="flex bg-white w-[66rem] h-[51rem] p-8 py-20 shadow-lg"
                     id="page2"
                   >
                     <div className="w-2/6 flex flex-col gap-6 justify-start items-start">
                       <p className="text-gray-800 text-4xl font-semibold">
                         Colors
                       </p>
-                      <p className="text-gray-400">
-                        Primary <br /> Secondary <br /> Shades
-                      </p>
+                      <div className="flex flex-col text-gray-400">
+                        <p>Primary</p>
+                        <p>Secondary</p>
+                        <p>Shades</p>
+                      </div>
                     </div>
                     <div className="w-4/6 bg-white flex flex-col">
-                      <div
-                        className="flex items-center justify-center w-full h-32"
-                        style={{ backgroundColor: primaryColor }}
-                      />
-                      <div
-                        className="flex items-center justify-center w-full h-32"
-                        style={{ backgroundColor: secondaryColor }}
-                      />
+                      <div className="flex flex-col h-1/2">
+                        <div
+                          className="flex items-center justify-center w-full h-28"
+                          style={{ backgroundColor: primaryColor }}
+                        />
+                        <div className="flex items-center justify-center w-full">
+                          {shadeLevels.map((shade) => (
+                            <div
+                              className="flex flex-col text-xs font-medium uppercase items-center justify-center w-full h-16"
+                              key={shade}
+                              style={{
+                                backgroundColor: getShades(primaryColor)[shade],
+                                color: getTextColor(
+                                  getShades(primaryColor)[shade]
+                                ),
+                              }}
+                            >
+                              <p>{shade}</p>
+                              <p>
+                                {getShades(primaryColor)[shade].replace(
+                                  /^#/,
+                                  ""
+                                )}
+                              </p>
+                            </div>
+                          ))}
+                        </div>
+                        <p className="text-lg font-semibold text-gray-800 pt-4">
+                          Primary Color
+                        </p>
+                        <div className="flex flex-col text-gray-400 text-sm">
+                          <p className="uppercase">HEX: {primaryColor}</p>
+                          <p className="uppercase">
+                            RGB: {hexToRgb(primaryColor)}
+                          </p>
+                          <p className="uppercase">
+                            HSL: {hexToHsl(primaryColor)}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex flex-col h-1/2">
+                        <div
+                          className="flex items-center justify-center w-full h-28"
+                          style={{ backgroundColor: secondaryColor }}
+                        />
+                        <div className="flex items-center justify-center w-full">
+                          {shadeLevels.map((shade) => (
+                            <div
+                              className="flex flex-col text-xs font-medium uppercase items-center justify-center w-full h-16"
+                              key={shade}
+                              style={{
+                                backgroundColor:
+                                  getShades(secondaryColor)[shade],
+                                color: getTextColor(
+                                  getShades(secondaryColor)[shade]
+                                ),
+                              }}
+                            >
+                              <p>{shade}</p>
+                              <p>
+                                {getShades(secondaryColor)[shade].replace(
+                                  /^#/,
+                                  ""
+                                )}
+                              </p>
+                            </div>
+                          ))}
+                        </div>
+                        <p className="text-lg font-semibold text-gray-800 pt-4">
+                          Secondary Color
+                        </p>
+                        <div className="flex flex-col text-gray-400 text-sm">
+                          <p className="uppercase">{secondaryColor}</p>
+                          <p className="uppercase">
+                            RGB: {hexToRgb(primaryColor)}
+                          </p>
+                          <p className="uppercase">
+                            HSL: {hexToHsl(primaryColor)}
+                          </p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
