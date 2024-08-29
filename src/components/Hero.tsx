@@ -353,7 +353,7 @@ const Hero = () => {
                       />
                     </div>
                     <div className="w-4/6 bg-white flex items-end p-16 h-full">
-                      <p className="font-semibold text-7xl text-gray-800 w-full">
+                      <p className="font-bold text-7xl text-gray-800 w-full">
                         Design <br /> Style Guide
                       </p>
                     </div>
@@ -509,91 +509,65 @@ const Hero = () => {
                       </p>
                       <div className="flex flex-col text-gray-400">
                         <p>Geist Sans</p>
-                        <p>H1 - H3</p>
+                        <p>H1 - H6</p>
                         <p>Body</p>
                       </div>
                     </div>
                     <div className="w-4/6 bg-white flex">
-                      <div className="flex items-start justify-start flex-col gap-4">
+                      <div className="flex items-start justify-between flex-col gap-4">
                         <div>
-                          <p className="text-2xl text-gray-800 font-medium">
-                            H1 - BLACK - 2.25REM
+                          <p className="text-2xl text-gray-600 font-medium">
+                            H1 - BLACK - 4.5REM
                           </p>
-                          <p className="text-4xl text-gray-800 font-black">
-                            ABCDEFGHIJKLMNOPQRSTUVWXYZ
-                          </p>
-                          <p className="text-4xl text-gray-800 font-black">
-                            abcdefghijklmnopqrstuvwxyz
-                          </p>
-                          <p className="text-4xl text-gray-800 font-black">
-                            0123456789
+                          <p className="text-7xl text-gray-800 font-black">
+                            Lorem Ipsum
                           </p>
                         </div>
                         <div>
-                          <p className="text-2xl text-gray-800 font-medium">
-                            H2 - EXTRABOLD - 1.875REM
+                          <p className="text-2xl text-gray-600 font-medium">
+                            H2 - EXTRABOLD - 2.25REM
                           </p>
-                          <p className="text-3xl text-gray-800 font-extrabold">
-                            ABCDEFGHIJKLMNOPQRSTUVWXYZ
-                          </p>
-                          <p className="text-3xl text-gray-800 font-extrabold">
-                            abcdefghijklmnopqrstuvwxyz
-                          </p>
-                          <p className="text-3xl text-gray-800 font-extrabold">
-                            0123456789
+                          <p className="text-5xl text-gray-800 font-extrabold">
+                            Lorem Ipsum
                           </p>
                         </div>
                         <div>
-                          <p className="text-2xl text-gray-800 font-medium">
-                            H3 - BOLD - 1.5REM
+                          <p className="text-2xl text-gray-600 font-medium">
+                            H3 - BOLD - 1.875REM
                           </p>
-                          <p className="text-2xl text-gray-800 font-bold">
-                            ABCDEFGHIJKLMNOPQRSTUVWXYZ
-                          </p>
-                          <p className="text-2xl text-gray-800 font-bold">
-                            abcdefghijklmnopqrstuvwxyz
-                          </p>
-                          <p className="text-2xl text-gray-800 font-bold">
-                            0123456789
+                          <p className="text-3xl text-gray-800 font-bold">
+                            Lorem Ipsum
                           </p>
                         </div>
                         <div>
-                          <p className="text-2xl text-gray-800 font-semibold">
+                          <p className="text-2xl text-gray-600 font-medium">
                             H4 - SEMIBOLD - 1.25REM
                           </p>
                           <p className="text-xl text-gray-800 font-semibold">
-                            ABCDEFGHIJKLMNOPQRSTUVWXYZ
-                          </p>
-                          <p className="text-xl text-gray-800 font-semibold">
-                            abcdefghijklmnopqrstuvwxyz
-                          </p>
-                          <p className="text-xl text-gray-800 font-semibold">
-                            0123456789
+                            Lorem Ipsum
                           </p>
                         </div>
                         <div>
-                          <p className="text-2xl text-gray-800">
+                          <p className="text-2xl text-gray-600 font-medium">
                             H5 - MEDIUM - 1.125REM
                           </p>
-                          <p className="text-lg text-gray-800">
-                            ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                          <p className="text-lg text-gray-800 font-medium">
+                            Lorem Ipsum
                           </p>
-                          <p className="text-lg text-gray-800">
-                            abcdefghijklmnopqrstuvwxyz
-                          </p>
-                          <p className="text-lg text-gray-800">0123456789</p>
                         </div>
                         <div>
-                          <p className="text-2xl text-gray-800">
-                            H6 - REGULAR - 1REM
+                          <p className="text-2xl text-gray-600 font-medium">
+                            H6 - NORMAL - 1.25REM
                           </p>
-                          <p className="text-gray-800">
-                            ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                          <p className="text-gray-800">Lorem Ipsum</p>
+                        </div>
+                        <div>
+                          <p className="text-2xl text-gray-600 font-medium">
+                            BODY - LIGHT - 1REM
                           </p>
-                          <p className="text-gray-800">
-                            abcdefghijklmnopqrstuvwxyz
+                          <p className="text-gray-800 font-light">
+                            Lorem Ipsum
                           </p>
-                          <p className="text-gray-800">0123456789</p>
                         </div>
                       </div>
                     </div>
