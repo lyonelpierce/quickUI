@@ -593,250 +593,296 @@ const Hero = () => {
                         <p>Outline</p>
                       </div>
                     </div>
-                    <div className="w-4/6 bg-white flex flex-col justify-between">
-                      <div className="grid grid-cols-4 grid-rows-3 gap-4">
-                        <button
-                          type="button"
-                          style={{
-                            backgroundColor: primaryColor,
-                            color: getShades(primaryColor)[950],
-                          }}
-                          className="w-36 h-10 rounded-lg font-medium text-sm"
-                        >
-                          Default
-                        </button>
-                        <button
-                          type="button"
-                          style={{
-                            backgroundColor: getShades(primaryColor)[600],
-                            color: getTextColor(getShades(primaryColor)[600]),
-                          }}
-                          className="w-36 h-10 rounded-lg font-medium text-sm"
-                        >
-                          Hover
-                        </button>
-                        <button
-                          type="button"
-                          style={{
-                            backgroundColor: getShades(primaryColor)[700],
-                            color: getTextColor(getShades(primaryColor)[700]),
-                          }}
-                          className="w-36 h-10 rounded-lg font-medium text-sm"
-                        >
-                          Active
-                        </button>
-                        <button
-                          type="button"
-                          style={{
-                            backgroundColor: getShades(primaryColor)[950],
-                            color: getTextColor(getShades(primaryColor)[950]),
-                          }}
-                          className="w-36 h-10 rounded-lg font-medium text-sm"
-                        >
-                          Disabled
-                        </button>
-                        <button
-                          type="button"
-                          style={{
-                            borderColor: primaryColor,
-                            color: primaryColor,
-                          }}
-                          className="border w-36 h-10 rounded-lg font-medium text-sm"
-                        >
-                          Default
-                        </button>
-                        <button
-                          type="button"
-                          style={{
-                            borderColor: getShades(primaryColor)[600],
-                            color: getShades(primaryColor)[600],
-                          }}
-                          className="border w-36 h-10 rounded-lg font-medium text-sm"
-                        >
-                          Hover
-                        </button>
-                        <button
-                          type="button"
-                          style={{
-                            borderColor: getShades(primaryColor)[700],
-                            color: getShades(primaryColor)[700],
-                          }}
-                          className="border w-36 h-10 rounded-lg font-medium text-sm"
-                        >
-                          Active
-                        </button>
-                        <button
-                          type="button"
-                          style={{
-                            borderColor: getShades(primaryColor)[950],
-                            color: getShades(primaryColor)[950],
-                          }}
-                          className="border w-36 h-10 rounded-lg font-medium text-sm"
-                        >
-                          Disabled
-                        </button>
-                        <button
-                          type="button"
-                          style={{
-                            borderColor: primaryColor,
-                            color: primaryColor,
-                          }}
-                          className="border w-36 h-10 rounded-lg font-medium text-sm"
-                        >
-                          Default
-                        </button>
-                        <button
-                          type="button"
-                          style={{
-                            borderColor: getShades(primaryColor)[600],
-                            color: getShades(primaryColor)[600],
-                          }}
-                          className="border w-36 h-10 rounded-lg font-medium text-sm"
-                        >
-                          Hover
-                        </button>
-                        <button
-                          type="button"
-                          style={{
-                            borderColor: getShades(primaryColor)[700],
-                            color: getShades(primaryColor)[700],
-                          }}
-                          className="border w-36 h-10 rounded-lg font-medium text-sm"
-                        >
-                          Active
-                        </button>
-                        <button
-                          type="button"
-                          style={{
-                            borderColor: getShades(primaryColor)[950],
-                            color: getShades(primaryColor)[950],
-                          }}
-                          className="border w-36 h-10 rounded-lg font-medium text-sm"
-                        >
-                          Disabled
-                        </button>
+                    <div className="w-4/6 bg-white flex flex-col gap-8">
+                      <div className="flex flex-col gap-2">
+                        <p className="text-lg font-semibold text-gray-800 pt-4">
+                          Primary Color Buttons
+                        </p>
+                        <p className="font-semibold text-gray-600">Flat</p>
+                        <div className="flex justify-between">
+                          <button
+                            type="button"
+                            style={{
+                              backgroundColor: primaryColor,
+                              color: getShades(primaryColor)[950],
+                            }}
+                            className="w-36 h-10 rounded-lg font-medium text-sm"
+                          >
+                            Default
+                          </button>
+                          <button
+                            type="button"
+                            style={{
+                              backgroundColor: getShades(primaryColor)[600],
+                              color: getTextColor(getShades(primaryColor)[600]),
+                            }}
+                            className="w-36 h-10 rounded-lg font-medium text-sm"
+                          >
+                            Hover
+                          </button>
+                          <button
+                            type="button"
+                            style={{
+                              backgroundColor: getShades(primaryColor)[700],
+                              color: getTextColor(getShades(primaryColor)[700]),
+                            }}
+                            className="w-36 h-10 rounded-lg font-medium text-sm"
+                          >
+                            Active
+                          </button>
+                          <button
+                            type="button"
+                            style={{
+                              backgroundColor: getShades(primaryColor)[950],
+                              color: getTextColor(getShades(primaryColor)[950]),
+                            }}
+                            className="w-36 h-10 rounded-lg font-medium text-sm"
+                          >
+                            Disabled
+                          </button>
+                        </div>
+                        <p className="font-semibold text-gray-600">Gradient</p>
+                        <div className="flex justify-between">
+                          <button
+                            type="button"
+                            style={{
+                              backgroundImage: `linear-gradient(180deg, ${primaryColor}, ${
+                                getShades(primaryColor)[600]
+                              })`,
+                              color: getTextColor(primaryColor),
+                            }}
+                            className="w-36 h-10 rounded-lg font-medium text-sm"
+                          >
+                            Default
+                          </button>
+                          <button
+                            type="button"
+                            style={{
+                              backgroundImage: `linear-gradient(180deg, ${
+                                getShades(primaryColor)[600]
+                              }, ${getShades(primaryColor)[700]})`,
+                              color: getTextColor(primaryColor),
+                            }}
+                            className="w-36 h-10 rounded-lg font-medium text-sm"
+                          >
+                            Hover
+                          </button>
+                          <button
+                            type="button"
+                            style={{
+                              backgroundImage: `linear-gradient(180deg, ${
+                                getShades(primaryColor)[700]
+                              }, ${getShades(primaryColor)[800]})`,
+                              color: getTextColor(primaryColor),
+                            }}
+                            className="w-36 h-10 rounded-lg font-medium text-sm"
+                          >
+                            Active
+                          </button>
+                          <button
+                            type="button"
+                            style={{
+                              backgroundImage: `linear-gradient(180deg, ${
+                                getShades(primaryColor)[800]
+                              }, ${getShades(primaryColor)[900]})`,
+                              color: getTextColor(primaryColor),
+                            }}
+                            className="w-36 h-10 rounded-lg font-medium text-sm"
+                          >
+                            Disabled
+                          </button>
+                        </div>
+                        <p className="font-semibold text-gray-600">Outline</p>
+                        <div className="flex justify-between">
+                          <button
+                            type="button"
+                            style={{
+                              borderColor: primaryColor,
+                              color: primaryColor,
+                            }}
+                            className="border w-36 h-10 rounded-lg font-medium text-sm"
+                          >
+                            Default
+                          </button>
+                          <button
+                            type="button"
+                            style={{
+                              borderColor: getShades(primaryColor)[600],
+                              color: getShades(primaryColor)[600],
+                            }}
+                            className="border w-36 h-10 rounded-lg font-medium text-sm"
+                          >
+                            Hover
+                          </button>
+                          <button
+                            type="button"
+                            style={{
+                              borderColor: getShades(primaryColor)[700],
+                              color: getShades(primaryColor)[700],
+                            }}
+                            className="border w-36 h-10 rounded-lg font-medium text-sm"
+                          >
+                            Active
+                          </button>
+                          <button
+                            type="button"
+                            style={{
+                              borderColor: getShades(primaryColor)[950],
+                              color: getShades(primaryColor)[950],
+                            }}
+                            className="border w-36 h-10 rounded-lg font-medium text-sm"
+                          >
+                            Disabled
+                          </button>
+                        </div>
                       </div>
-                      <div className="grid grid-cols-4 grid-rows-3 gap-4">
-                        <button
-                          type="button"
-                          style={{
-                            backgroundColor: secondaryColor,
-                            color: getShades(secondaryColor)[950],
-                          }}
-                          className="w-36 h-10 rounded-lg font-medium text-sm"
-                        >
-                          Default
-                        </button>
-                        <button
-                          type="button"
-                          style={{
-                            backgroundColor: getShades(secondaryColor)[600],
-                            color: getTextColor(getShades(secondaryColor)[600]),
-                          }}
-                          className="w-36 h-10 rounded-lg font-medium text-sm"
-                        >
-                          Hover
-                        </button>
-                        <button
-                          type="button"
-                          style={{
-                            backgroundColor: getShades(secondaryColor)[700],
-                            color: getTextColor(getShades(secondaryColor)[700]),
-                          }}
-                          className="w-36 h-10 rounded-lg font-medium text-sm"
-                        >
-                          Active
-                        </button>
-                        <button
-                          type="button"
-                          style={{
-                            backgroundColor: getShades(secondaryColor)[950],
-                            color: getTextColor(getShades(secondaryColor)[950]),
-                          }}
-                          className="w-36 h-10 rounded-lg font-medium text-sm"
-                        >
-                          Disabled
-                        </button>
-                        <button
-                          type="button"
-                          style={{
-                            borderColor: secondaryColor,
-                            color: secondaryColor,
-                          }}
-                          className="border w-36 h-10 rounded-lg font-medium text-sm"
-                        >
-                          Default
-                        </button>
-                        <button
-                          type="button"
-                          style={{
-                            borderColor: getShades(secondaryColor)[600],
-                            color: getShades(secondaryColor)[600],
-                          }}
-                          className="border w-36 h-10 rounded-lg font-medium text-sm"
-                        >
-                          Hover
-                        </button>
-                        <button
-                          type="button"
-                          style={{
-                            borderColor: getShades(secondaryColor)[700],
-                            color: getShades(secondaryColor)[700],
-                          }}
-                          className="border w-36 h-10 rounded-lg font-medium text-sm"
-                        >
-                          Active
-                        </button>
-                        <button
-                          type="button"
-                          style={{
-                            borderColor: getShades(secondaryColor)[950],
-                            color: getShades(secondaryColor)[950],
-                          }}
-                          className="border w-36 h-10 rounded-lg font-medium text-sm"
-                        >
-                          Disabled
-                        </button>
-                        <button
-                          type="button"
-                          style={{
-                            borderColor: secondaryColor,
-                            color: secondaryColor,
-                          }}
-                          className="border w-36 h-10 rounded-lg font-medium text-sm"
-                        >
-                          Default
-                        </button>
-                        <button
-                          type="button"
-                          style={{
-                            borderColor: getShades(secondaryColor)[600],
-                            color: getShades(secondaryColor)[600],
-                          }}
-                          className="border w-36 h-10 rounded-lg font-medium text-sm"
-                        >
-                          Hover
-                        </button>
-                        <button
-                          type="button"
-                          style={{
-                            borderColor: getShades(secondaryColor)[700],
-                            color: getShades(secondaryColor)[700],
-                          }}
-                          className="border w-36 h-10 rounded-lg font-medium text-sm"
-                        >
-                          Active
-                        </button>
-                        <button
-                          type="button"
-                          style={{
-                            borderColor: getShades(secondaryColor)[950],
-                            color: getShades(secondaryColor)[950],
-                          }}
-                          className="border w-36 h-10 rounded-lg font-medium text-sm"
-                        >
-                          Disabled
-                        </button>
+                      <div className="flex flex-col gap-2">
+                        <p className="text-lg font-semibold text-gray-800 pt-4">
+                          Secondary Color Buttons
+                        </p>
+                        <p className="font-semibold text-gray-600">Flat</p>
+                        <div className="flex justify-between">
+                          <button
+                            type="button"
+                            style={{
+                              backgroundColor: secondaryColor,
+                              color: getShades(secondaryColor)[950],
+                            }}
+                            className="w-36 h-10 rounded-lg font-medium text-sm"
+                          >
+                            Default
+                          </button>
+                          <button
+                            type="button"
+                            style={{
+                              backgroundColor: getShades(secondaryColor)[600],
+                              color: getTextColor(
+                                getShades(secondaryColor)[600]
+                              ),
+                            }}
+                            className="w-36 h-10 rounded-lg font-medium text-sm"
+                          >
+                            Hover
+                          </button>
+                          <button
+                            type="button"
+                            style={{
+                              backgroundColor: getShades(secondaryColor)[700],
+                              color: getTextColor(
+                                getShades(secondaryColor)[700]
+                              ),
+                            }}
+                            className="w-36 h-10 rounded-lg font-medium text-sm"
+                          >
+                            Active
+                          </button>
+                          <button
+                            type="button"
+                            style={{
+                              backgroundColor: getShades(secondaryColor)[950],
+                              color: getTextColor(
+                                getShades(secondaryColor)[950]
+                              ),
+                            }}
+                            className="w-36 h-10 rounded-lg font-medium text-sm"
+                          >
+                            Disabled
+                          </button>
+                        </div>
+                        <p className="font-semibold text-gray-600">Outline</p>
+                        <div className="flex justify-between">
+                          <button
+                            type="button"
+                            style={{
+                              backgroundImage: `linear-gradient(180deg, ${secondaryColor}, ${
+                                getShades(secondaryColor)[600]
+                              })`,
+                              color: getTextColor(secondaryColor),
+                            }}
+                            className="w-36 h-10 rounded-lg font-medium text-sm"
+                          >
+                            Default
+                          </button>
+                          <button
+                            type="button"
+                            style={{
+                              backgroundImage: `linear-gradient(180deg, ${
+                                getShades(secondaryColor)[600]
+                              }, ${getShades(secondaryColor)[700]})`,
+                              color: getTextColor(secondaryColor),
+                            }}
+                            className="w-36 h-10 rounded-lg font-medium text-sm"
+                          >
+                            Hover
+                          </button>
+                          <button
+                            type="button"
+                            style={{
+                              backgroundImage: `linear-gradient(180deg, ${
+                                getShades(secondaryColor)[700]
+                              }, ${getShades(secondaryColor)[800]})`,
+                              color: getTextColor(secondaryColor),
+                            }}
+                            className="w-36 h-10 rounded-lg font-medium text-sm"
+                          >
+                            Active
+                          </button>
+                          <button
+                            type="button"
+                            style={{
+                              backgroundImage: `linear-gradient(180deg, ${
+                                getShades(secondaryColor)[800]
+                              }, ${getShades(secondaryColor)[900]})`,
+                              color: getTextColor(secondaryColor),
+                            }}
+                            className="w-36 h-10 rounded-lg font-medium text-sm"
+                          >
+                            Disabled
+                          </button>
+                        </div>
+                        <p className="font-semibold text-gray-600">Outline</p>
+                        <div className="flex justify-between">
+                          <button
+                            type="button"
+                            style={{
+                              borderColor: secondaryColor,
+                              color: secondaryColor,
+                            }}
+                            className="border w-36 h-10 rounded-lg font-medium text-sm"
+                          >
+                            Default
+                          </button>
+                          <button
+                            type="button"
+                            style={{
+                              borderColor: getShades(secondaryColor)[600],
+                              color: getShades(secondaryColor)[600],
+                            }}
+                            className="border w-36 h-10 rounded-lg font-medium text-sm"
+                          >
+                            Hover
+                          </button>
+                          <button
+                            type="button"
+                            style={{
+                              borderColor: getShades(secondaryColor)[700],
+                              color: getShades(secondaryColor)[700],
+                            }}
+                            className="border w-36 h-10 rounded-lg font-medium text-sm"
+                          >
+                            Active
+                          </button>
+                          <button
+                            type="button"
+                            style={{
+                              borderColor: getShades(secondaryColor)[950],
+                              color: getShades(secondaryColor)[950],
+                            }}
+                            className="border w-36 h-10 rounded-lg font-medium text-sm"
+                          >
+                            Disabled
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
