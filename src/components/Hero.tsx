@@ -498,6 +498,106 @@ const Hero = () => {
                       </div>
                     </div>
                   </div>
+                  {/* PAGE 4 */}
+                  <div
+                    className="flex bg-white w-[66rem] h-[51rem] p-8 py-20 shadow-lg"
+                    id="page2"
+                  >
+                    <div className="w-2/6 flex flex-col gap-6 justify-start items-start">
+                      <p className="text-gray-800 text-4xl font-semibold">
+                        Typography
+                      </p>
+                      <div className="flex flex-col text-gray-400">
+                        <p>Geist Sans</p>
+                        <p>H1 - H3</p>
+                        <p>Body</p>
+                      </div>
+                    </div>
+                    <div className="w-4/6 bg-white flex">
+                      <div className="flex items-start justify-start flex-col gap-4">
+                        <div>
+                          <p className="text-2xl text-gray-800 font-medium">
+                            H1 - BLACK - 2.25REM
+                          </p>
+                          <p className="text-4xl text-gray-800 font-black">
+                            ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                          </p>
+                          <p className="text-4xl text-gray-800 font-black">
+                            abcdefghijklmnopqrstuvwxyz
+                          </p>
+                          <p className="text-4xl text-gray-800 font-black">
+                            0123456789
+                          </p>
+                        </div>
+                        <div>
+                          <p className="text-2xl text-gray-800 font-medium">
+                            H2 - EXTRABOLD - 1.875REM
+                          </p>
+                          <p className="text-3xl text-gray-800 font-extrabold">
+                            ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                          </p>
+                          <p className="text-3xl text-gray-800 font-extrabold">
+                            abcdefghijklmnopqrstuvwxyz
+                          </p>
+                          <p className="text-3xl text-gray-800 font-extrabold">
+                            0123456789
+                          </p>
+                        </div>
+                        <div>
+                          <p className="text-2xl text-gray-800 font-medium">
+                            H3 - BOLD - 1.5REM
+                          </p>
+                          <p className="text-2xl text-gray-800 font-bold">
+                            ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                          </p>
+                          <p className="text-2xl text-gray-800 font-bold">
+                            abcdefghijklmnopqrstuvwxyz
+                          </p>
+                          <p className="text-2xl text-gray-800 font-bold">
+                            0123456789
+                          </p>
+                        </div>
+                        <div>
+                          <p className="text-2xl text-gray-800 font-semibold">
+                            H4 - SEMIBOLD - 1.25REM
+                          </p>
+                          <p className="text-xl text-gray-800 font-semibold">
+                            ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                          </p>
+                          <p className="text-xl text-gray-800 font-semibold">
+                            abcdefghijklmnopqrstuvwxyz
+                          </p>
+                          <p className="text-xl text-gray-800 font-semibold">
+                            0123456789
+                          </p>
+                        </div>
+                        <div>
+                          <p className="text-2xl text-gray-800">
+                            H5 - MEDIUM - 1.125REM
+                          </p>
+                          <p className="text-lg text-gray-800">
+                            ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                          </p>
+                          <p className="text-lg text-gray-800">
+                            abcdefghijklmnopqrstuvwxyz
+                          </p>
+                          <p className="text-lg text-gray-800">0123456789</p>
+                        </div>
+                        <div>
+                          <p className="text-2xl text-gray-800">
+                            H6 - REGULAR - 1REM
+                          </p>
+                          <p className="text-gray-800">
+                            ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                          </p>
+                          <p className="text-gray-800">
+                            abcdefghijklmnopqrstuvwxyz
+                          </p>
+                          <p className="text-gray-800">0123456789</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </ScrollArea>
             </div>
