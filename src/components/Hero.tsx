@@ -197,7 +197,7 @@ const Hero = () => {
 
   return (
     <ResizablePanelGroup direction="horizontal">
-      <ResizablePanel minSize={30}>
+      <ResizablePanel minSize={30} defaultSize={30}>
         <div className="flex flex-col grow h-screen gap-8 items-center justify-center">
           <h2 className="text-5xl font-semibold text-center">
             Style Guide<p>PDF Generator</p>
@@ -205,7 +205,7 @@ const Hero = () => {
           <Dropzone
             accept={{
               "image/png": [".png"],
-              "image/jpeg": [".jpg", ".jpeg"],
+              "image/gif": [".gif"],
               "image/svg+xml": [".svg"],
             }}
             maxSize={maxSize}
@@ -247,6 +247,9 @@ const Hero = () => {
                         <div className="flex flex-col gap-px">
                           <p className="font-medium text-sm text-muted-foreground">
                             Drag & drop your logo here, or click to select it.
+                          </p>
+                          <p className="text-muted-foreground text-xs font-medium mt-1 brightness-75">
+                            Only .png, .gif or .svg files accepted.
                           </p>
                         </div>
                       </>
@@ -326,7 +329,7 @@ const Hero = () => {
         </div>
       </ResizablePanel>
       <ResizableHandle withHandle />
-      <ResizablePanel minSize={50}>
+      <ResizablePanel minSize={50} defaultSize={70}>
         {file &&
           colors &&
           colors.length > 0 &&
@@ -541,31 +544,31 @@ const Hero = () => {
                         </div>
                         <div>
                           <p className="text-2xl text-gray-600 font-medium">
-                            H4 - SEMIBOLD - 1.25REM
+                            H4 - SEMIBOLD - 1.5REM
                           </p>
-                          <p className="text-xl text-gray-800 font-semibold">
+                          <p className="text-2xl text-gray-800 font-semibold">
                             Lorem Ipsum
                           </p>
                         </div>
                         <div>
                           <p className="text-2xl text-gray-600 font-medium">
-                            H5 - MEDIUM - 1.125REM
+                            H5 - MEDIUM - 1.25REM
                           </p>
-                          <p className="text-lg text-gray-800 font-medium">
+                          <p className="text-xl text-gray-800 font-medium">
                             Lorem Ipsum
                           </p>
                         </div>
                         <div>
                           <p className="text-2xl text-gray-600 font-medium">
-                            H6 - NORMAL - 1.25REM
+                            H6 - NORMAL - 1.125REM
                           </p>
-                          <p className="text-gray-800">Lorem Ipsum</p>
+                          <p className="text-gray-800 text-lg">Lorem Ipsum</p>
                         </div>
                         <div>
                           <p className="text-2xl text-gray-600 font-medium">
                             BODY - LIGHT - 1REM
                           </p>
-                          <p className="text-gray-800 font-light">
+                          <p className="text-gray-800 text-base font-light">
                             Lorem Ipsum
                           </p>
                         </div>
